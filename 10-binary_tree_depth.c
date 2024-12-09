@@ -8,9 +8,13 @@
  */
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-	return ((tree && tree->parent) ? 1 + binary_tree_depth(tree->parent) : 0);
 
-	/*ajoute 1(compte arete courante)*/
-	/*appel recursif fonction sur parent*/
-	/*H->D, D->B, B->A*/
+	if (tree == NULL)
+		return (0);
+
+	if (tree->parent != NULL)
+		return (binary_tree_depth(tree->parent) + 1);
+	else
+		return (0);
+
 }
