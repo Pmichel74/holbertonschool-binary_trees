@@ -15,7 +15,8 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 	/* si noeud actuel a un enfant droite,*/
 	/* ajoute 1 a la hauteur avec recursivité */
-		right = 1 + binary_tree_height(tree->right);
 		left = 1 + binary_tree_height(tree->left);
+		right = 1 + binary_tree_height(tree->right);
+
 		return (left > right ? left : right);
 }
