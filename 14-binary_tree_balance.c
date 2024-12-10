@@ -39,9 +39,9 @@ size_t binary_tree_height(const binary_tree_t *tree)
  * Return: If tree is NULL, return 0, else return balance factor.
  */
 int binary_tree_balance(const binary_tree_t *tree)
-{
-	if (!tree)
-		return (0);
 
-		return (binary_tree_height(tree->left) - binary_tree_height(tree->right));
+{
+		if (!tree)
+				return (0);
+		return (_binary_tree_height(tree->left) - _binary_tree_height(tree->right));
 }
