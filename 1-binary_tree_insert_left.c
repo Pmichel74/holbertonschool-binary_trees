@@ -1,35 +1,50 @@
 #include "binary_trees.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * binary_tree_insert_left - Inserts a node as a left-child of
- * of another node.
- * @parent: A pointer to the node to insert the left-child in.
- * @value: The value to store in the new node.
+ * binary_tree_insert_left - Function that inserts a node as the left-child
+ * of another node
  *
- * Return: If parent is NULL or an error occurs - NULL.
- *
- * Description: If parent already has a left-child, the new node
- *              takes its place and the old left-child is set as
- *              the left-child of the new node.
+ * @parent: Pointer to parent of node to create
+ * @value: Value to insert in the desired node
+ * Return: Pointer to the new node
  */
+
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
+
 	binary_tree_t *new;
+	binary_tree_t *temp;
 
-	if (!parent)
-	return (NULL);
+	(void) (*new);
+	(void) (value);
 
-	new = binary_tree_t(parent, value);
+	if (parent == NULL)
+		return (NULL);
 
-	if (!new)
-	return (NULL);
+	new = malloc(sizeof(binary_tree_t));
 
-	if (parent->left != NULL)
+	if (new == NULL)
+		return (NULL);
+
+	new->n = value;
+	new->left = NULL;
+	new->right = NULL;
+
+	if (parent->left == NULL)
 	{
-		new->left = parent->left;/*parent->new node->ancien enfant*/
-		parent->left->parent = new;/*G pointe vers X comme son nouveau parent*/
+		parent->left = new;
+		new->parent = parent;
 	}
-	parent->left = new;/*insertion finale d'un noeud a gauche*/
+	else
+	{
+		temp = parent->left;
+		parent->left = new;
+		new->left = temp;
+		new->parent = parent;
+		temp->parent = new;
 
-	return (new);
+	}
+
+return (new);
 }
