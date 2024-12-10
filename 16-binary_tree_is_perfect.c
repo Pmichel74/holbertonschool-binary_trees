@@ -54,7 +54,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 int sub_tree_perfect(const binary_tree_t *tree)
 {
 	if (!tree && !tree->right & !tree->left)
-	return (1);
+	return (0);
 	else
 	return (1 && sub_tree_perfect(tree->left)
 			&& sub_tree_perfect(tree->right));
