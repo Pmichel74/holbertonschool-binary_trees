@@ -58,7 +58,7 @@ int sub_tree_perfect(const binary_tree_t *tree)
 	else
 	return (1 && sub_tree_perfect(tree->left)
 			&& sub_tree_perfect(tree->right));
-	return (0);
+	/*return (0);*/
 }
 
 /**
