@@ -69,7 +69,7 @@ Function Prototypes
   * Returns a pointer to the new node, or `NULL` on failure.
 
 * **1. Insert left**
-  * [1-binary_tree_insert](./1-binary_tree_insert): C function that inserts a
+  * [1-binary_tree_insert](./1-binary_tree_insert.c): C function that inserts a
   node as the left-child of another.
   * Returns a pointer to the new node, or `NULL` on failure.
   * If the given `parent` already contains a left node, the new node takes its
